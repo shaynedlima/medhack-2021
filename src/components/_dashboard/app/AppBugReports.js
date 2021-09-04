@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react';
-import bugFilled from '@iconify/icons-ant-design/bug-filled';
+import bugFilled from '@iconify/icons-healthicons/cardiogram';
 // material
 import { alpha, styled } from '@material-ui/core/styles';
 import { Card, Typography } from '@material-ui/core';
