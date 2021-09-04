@@ -56,7 +56,7 @@ export default function AppCoughTracker() {
     return (
         <Card>
             {maxCoughs>2 && <Alert/>}
-            <CardHeader title="Symptom Progression" subheader={String(sumCoughs).concat(" coughs in the past minute")}/>
+            <CardHeader title="Cough Analyser" subheader={String(sumCoughs).concat(" coughs in the past minute")}/>
             <Box sx={{ p: 3, pb: 1 }} dir="ltr">
                 <ReactApexChart type="line" series={CHART_DATA} options={chartOptions} height={364} />
             </Box>
