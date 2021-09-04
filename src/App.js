@@ -1,32 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-import Home from './pages/Home.js'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+// routes
+import Router from './routes';
+// theme
+import ThemeConfig from './theme';
+// components
+import ScrollToTop from './components/ScrollToTop';
 
-function App() {
+// ----------------------------------------------------------------------
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch> */}
-        <Home />
-      </header>
-    </div>
+    <ThemeConfig>
+      <ScrollToTop />
+      <Router />
+    </ThemeConfig>
   );
 }
-
-export default App;
