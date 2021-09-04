@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import { merge } from 'lodash';
 import ReactApexChart from 'react-apexcharts';
 // material
@@ -7,7 +7,9 @@ import Alert from '../../Alert'
 //
 import { BaseOptionChart } from '../../charts';
 // data
-import { coughs, time } from "../../../data/coughs";
+// import { coughs, time } from "../../../data/coughs";
+import coughs from '../../../data/coughs.json';
+import time from '../../../data/time.json';
 
 // ----------------------------------------------------------------------
 
@@ -26,8 +28,8 @@ export default function AppCoughTracker() {
         stroke: { width: [0, 5] },
         plotOptions: { bar: { columnWidth: '11%', borderRadius: 4 } },
         fill: {
-            type: ['gradient', 'solid'], 
-            opacity: [1, 1], 
+            type: ['gradient', 'solid'],
+            opacity: [1, 1],
             gradient: {
                 inverseColors: false,
                 shade: 'light',
@@ -36,6 +38,21 @@ export default function AppCoughTracker() {
                 opacityTo: 0.55,
                 stops: [0, 100, 100, 100]
             }
+        },
+        chart: {
+            animations: {
+                enabled: false,
+                easing: 'easeinout',
+                speed: 8800,
+                animateGradually: {
+                    enabled: true,
+                    delay: 150
+                },
+                dynamicAnimation: {
+                    enabled: false,
+                    speed: 350
+                }
+            },
         },
         labels: time.data,
         xaxis: { type: 'datetime' },
@@ -55,8 +72,8 @@ export default function AppCoughTracker() {
 
     return (
         <Card>
-            {maxCoughs>2 && <Alert/>}
-            <CardHeader title="Cough Analyser" subheader={String(sumCoughs).concat(" coughs in the past minute")}/>
+            {maxCoughs > 2 && <Alert />}
+            <CardHeader title="Cough Analyser" subheader="" />
             <Box sx={{ p: 3, pb: 1 }} dir="ltr">
                 <ReactApexChart type="line" series={CHART_DATA} options={chartOptions} height={364} />
             </Box>
