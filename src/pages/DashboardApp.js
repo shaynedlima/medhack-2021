@@ -62,7 +62,7 @@ export default function DashboardApp() {
                   <AlertTitle>Patient symptoms deteriorating </AlertTitle>
                   Frequency of wet coughs have increased in the past
                   <br />
-                  <strong>> Book patient consultation</strong>
+                  <strong> Book patient consultation</strong>
                 </Alert>
               </Box>
             </Stack>
